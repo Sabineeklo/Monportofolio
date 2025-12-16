@@ -24,30 +24,6 @@ Ce projet a été conçu avec une approche simple, moderne et performante, en me
 
 ---
 
-## 📦 Installation et lancement
-
-```bash
-# Cloner le projet
-git clone https://github.com/username/portfolio.git
-
-# Accéder au dossier
-cd portfolio
-
-# Installer les dépendances
-npm install
-
-# Lancer le projet en local
-npm run dev
-```
-
-Le projet sera accessible sur :
-
-```
-http://localhost:5173
-```
-
----
-
 
 ## 📫 Contact
 
