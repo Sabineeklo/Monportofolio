@@ -1,27 +1,24 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useRef } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
-// import CV from './pages/CV';
+import Resume from './pages/Resume';
+import About from './pages/About';
+import ProjectDetail from './pages/ProjectDetail';
 
 const App = () => {
-  const projectsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-
-  const scrollToProjects = () => projectsRef.current?.scrollIntoView({ behavior: 'smooth' });
-  const scrollToContact = () => contactRef.current?.scrollIntoView({ behavior: 'smooth' });
-
   return (
-    <Router>
-      <Navbar scrollToProjects={scrollToProjects} scrollToContact={scrollToContact} />
+    <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Home projectsRef={projectsRef} contactRef={contactRef} />} />
-        {/* <Route path="/cv" element={<CV />} /> */}
+        <Route path='/' element={<Home />} />
+        <Route path='/resume' element={<Resume />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/projects/:id' element={<ProjectDetail />} />
       </Routes>
-      <Footer/>
-    </Router>
+      <Footer />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
