@@ -33,6 +33,27 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
     technologies: ["React", "MongoDB", "Node.js"],
   },
+  {
+    id: 4,
+    title: "Quote Generation",
+    description: "A dynamic quote generator that displays random proverbs and inspirational quotes. Features smooth animations and an intuitive interface for discovering wisdom.",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=400&fit=crop",
+    technologies: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    id: 5,
+    title: "Enterprise Dashboard",
+    description: "Real-time analytics dashboard for business operations. Handles 10k+ concurrent users with live data visualization and performance monitoring.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    technologies: ["React", "TypeScript", "Node.js"],
+  },
+  {
+    id: 6,
+    title: "E-commerce Platform",
+    description: "Full-stack e-commerce solution with product catalog, shopping cart, and secure payment integration. Built for scalability and performance.",
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
+    technologies: ["React", "MongoDB", "Node.js"],
+  },
 ];
 
 // Technologies
