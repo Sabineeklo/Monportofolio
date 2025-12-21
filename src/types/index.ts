@@ -1,3 +1,5 @@
+import type { IconType } from 'react-icons'
+
 export interface Project {
   id: number;
   title: string;
@@ -10,7 +12,7 @@ export interface Project {
 
 export interface Technology {
   name: string;
-  icon: string;
+  icon: IconType;
 }
 
 export interface ContactFormData {

@@ -9,3 +9,6 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+body {
+  @apply font-sans;
+}

@@ -47,6 +47,9 @@ export default {
           end: '#E6F7FF',
         },
       },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
     },
   },
   plugins: [],

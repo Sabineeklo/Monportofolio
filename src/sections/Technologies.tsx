@@ -1,8 +1,68 @@
+import bg from '../assets/bg-projects.png';
+import { technologies } from '../data/content';
 
 const Technologies = () => {
   return (
-    <div>Technologies</div>
-  )
-}
+    <section className='relative py-32 text-center text-white'>
+      {/* Background + overlay */}
+      <div className='absolute inset-0'>
+        <img
+          src={bg}
+          alt='Technologies background'
+          className='w-full h-full object-cover'
+        />
+        <div className='absolute inset-0 bg-primary-500/95' />
+      </div>
 
-export default Technologies
+      {/* Content */}
+      <div className='relative z-10 max-w-5xl mx-auto px-6'>
+        {/* Title */}
+        <h2 className='text-4xl md:text-4xl font-bold mb-5'>
+          Technologies I use in my work
+        </h2>
+
+        <p className='text-primary-50 max-w-lg mx-auto mb-16 px-12'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum
+          nunc dapibus ut etiam odio enim risus viverra adipiscing. Tristique.
+        </p>
+
+        {/* Icons */}
+        <div className='flex justify-center gap-16 flex-wrap'>
+          {technologies.map(({ name, icon: Icon }) => (
+            <div
+              key={name}
+              className='relative group w-32 h-20 flex items-center justify-center'
+            >
+              {/* Icône */}
+              <Icon
+                size={52}
+                className='
+        text-secondary-500
+        transition-opacity duration-300
+        group-hover:opacity-30
+      '
+              />
+
+              {/* Label hover */}
+              <span
+                className='
+        absolute
+        text-xl font-semibold
+        text-secondary-100
+        opacity-0
+        transition-opacity duration-300
+        group-hover:opacity-100
+        whitespace-nowrap
+      '
+              >
+                {name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Technologies;

@@ -1,4 +1,17 @@
 import type { Project, Technology, SocialLink } from '../types/index.ts';
+import { FaNodeJs, FaJs, FaGitAlt } from "react-icons/fa6";
+import {
+  SiHtml5,
+  SiCss3,
+  SiReact,
+  SiTypescript,
+  SiMongodb,
+  SiTailwindcss,
+  SiFigma
+} from 'react-icons/si'
+
+
+
 
 // Informations personnelles
 export const personalInfo = {
@@ -58,15 +71,18 @@ export const projects: Project[] = [
 
 // Technologies
 export const technologies: Technology[] = [
-  { name: "HTML5", icon: "🌐" },
-  { name: "CSS3", icon: "🎨" },
-  { name: "JavaScript", icon: "⚡" },
-  { name: "React", icon: "⚛️" },
-  { name: "Angular", icon: "🅰️" },
-  { name: "TypeScript", icon: "📘" },
-  { name: "Node.js", icon: "🟢" },
-  { name: "MongoDB", icon: "🍃" },
+  { name: "HTML5", icon: SiHtml5 },
+  { name: "CSS3", icon: SiCss3 },
+  { name: "JavaScript", icon: FaJs },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "React", icon: SiReact },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "Node.js", icon: FaNodeJs },
+  { name: "MongoDB", icon: SiMongodb },
+  { name: "Git", icon: FaGitAlt },
+  { name: "Figma", icon: SiFigma },
 ];
+
 
 // Liens sociaux
 export const socialLinks: SocialLink[] = [
