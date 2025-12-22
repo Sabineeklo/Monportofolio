@@ -17,21 +17,21 @@ const Technologies = () => {
       {/* Content */}
       <div className='relative z-10 max-w-5xl mx-auto px-6'>
         {/* Title */}
-        <h2 className='text-4xl md:text-4xl font-bold mb-5'>
+        <h2 className='lg:text-4xl text-3xl md:text-4xl font-bold mb-5'>
           Technologies I use in my work
         </h2>
 
-        <p className='text-primary-50 max-w-lg mx-auto mb-16 px-12'>
+        <p className='text-primary-50 max-w-lg mx-auto mb-16 lg:px-12'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum
           nunc dapibus ut etiam odio enim risus viverra adipiscing. Tristique.
         </p>
 
         {/* Icons */}
-        <div className='flex justify-center gap-16 flex-wrap'>
+        <div className='flex justify-center gap-12 lg:gap-16 flex-wrap'>
           {technologies.map(({ name, icon: Icon }) => (
             <div
               key={name}
-              className='relative group w-32 h-20 flex items-center justify-center'
+              className='relative group lg:w-32 h-20 flex items-center justify-center'
             >
               {/* Icône */}
               <Icon
@@ -47,7 +47,7 @@ const Technologies = () => {
               <span
                 className='
         absolute
-        text-xl font-semibold
+        lg:text-xl font-semibold
         text-secondary-100
         opacity-0
         transition-opacity duration-300

@@ -1,21 +1,21 @@
-import React from 'react'
-import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import type { Project } from '../types'
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import type { Project } from '../types';
 
 interface ProjectCardProps {
-  project: Project
-  className?: string
+  project: Project;
+  className?: string;
 }
 
 const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
   ({ project, className = '' }, ref) => {
-    const { id, title, description, image } = project
+    const { id, title, description, image } = project;
 
     return (
       <div
         ref={ref}
-        className={`project-card flex-shrink-0 w-[500px] ${className}`}
+        className={`project-card flex-shrink-0 lg:w-[500px] w-[300px] ${className}`}
       >
         <Link
           to={`/projects/${id}`}
@@ -26,38 +26,41 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
             <img
               src={image}
               alt={title}
-              className="h-[550px] w-full object-cover"
+              className="lg:h-[550px] h-[340px] w-full object-cover"
             />
 
             {/* Overlay blanc semi-transparent */}
             <div className="absolute inset-0 bg-white/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           </div>
 
-          {/* Card superposée (même largeur que l'image, décalée) */}
+          {/* Card superposée */}
           <div
-    className="
-      absolute
-      -bottom-8         
-      mt-2             
-      left-6      
-      w-full           
-      bg-primary-500
-      text-white
-      p-6
-      shadow-lg
-      transition-all
-      duration-300
-      group-hover:-translate-y-1
-      z-10
-    "
-  >
+            className="
+              absolute
+              lg:-bottom-8 
+              -bottom-12
+              lg:mt-2
+              left-6
+              w-full
+              bg-primary-500
+              text-white
+              lg:p-6
+              p-4
+              shadow-lg
+              transition-all
+              duration-300
+              group-hover:-translate-y-1
+              z-10
+            "
+          >
             <h3 className="text-xl font-semibold mb-3">{title}</h3>
 
-            <p className="text-lg text-primary-100 leading-relaxed mb-6">
+            {/* Description tronquée à 3 lignes */}
+            <p className="text-lg text-primary-100 leading-relaxed mb-6 line-clamp-4">
               {description}
             </p>
 
-            {/* Faux bouton (visuel uniquement) */}
+            {/* bouton */}
             <span
               className="
                 inline-flex
@@ -78,8 +81,8 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
           </div>
         </Link>
       </div>
-    )
+    );
   }
-)
+);
 
-export default ProjectCard
+export default ProjectCard;

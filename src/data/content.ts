@@ -1,5 +1,6 @@
 import type { Project, Technology, SocialLink } from '../types/index.ts';
 import { FaNodeJs, FaJs, FaGitAlt } from "react-icons/fa6";
+import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa'
 import {
   SiHtml5,
   SiCss3,
@@ -86,8 +87,21 @@ export const technologies: Technology[] = [
 
 // Liens sociaux
 export const socialLinks: SocialLink[] = [
-  { name: "LinkedIn", url: "https://linkedin.com", icon: "linkedin" },
-  { name: "GitHub", url: "https://github.com", icon: "github" },
-  { name: "Email", url: "mailto:sabine@example.com", icon: "mail" },
-  { name: "Phone", url: "tel:+33123456789", icon: "phone" },
-];
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/eklo-afi-sabine/',
+    icon: FaLinkedinIn,
+    external: true,
+  },
+  {
+    name: 'GitHub',
+    href: 'https://github.com/Sabineeklo',
+    icon: FaGithub,
+    external: true,
+  },
+  {
+    name: 'Email',
+    href: 'mailto:ekloafisabine@gmail.com',
+    icon: FaEnvelope,
+  },
+]

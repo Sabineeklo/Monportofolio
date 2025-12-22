@@ -51,7 +51,7 @@ const Projects = () => {
   }, [])
 
   return (
-    <section className="relative py-32 px-5">
+    <section className="relative py-20 lg:py-32 px-5">
       {/* Background + overlay */}
       <div className="absolute inset-0">
         <img src={bg} alt="Background" className="w-full h-full object-cover" />
@@ -59,10 +59,10 @@ const Projects = () => {
       </div>
 
       {/* Contenu */}
-      <div className="relative z-10 mx-auto px-8 grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
-        {/* Texte à gauche centré verticalement */}
-        <div className="lg:col-span-1 px-16 flex flex-col justify-center h-full">
-          <h1 className="text-4xl font-semibold text-primary-600 mb-6">
+      <div className="relative z-10 mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+        {/* Texte à gauche*/}
+        <div className="lg:col-span-1 lg:px-16 px-4 flex flex-col justify-center h-full">
+          <h1 className="lg:text-4xl text-3xl font-semibold text-primary-600 mb-6">
             A selection of projects I worked on
           </h1>
           <p className="text-primary-900 text-lg leading-relaxed">
@@ -77,19 +77,19 @@ const Projects = () => {
           {/* Slider */}
           <div
             ref={sliderRef}
-            className="flex gap-16 overflow-x-auto scroll-smooth pb-32 scrollbar-hide"
+            className="flex gap-16 overflow-x-auto scroll-smooth pb-20 lg:pb-32 scrollbar-hide"
           >
             {projects.map((project, index) => (
               <ProjectCard
                 key={project.id}
                 project={project}
-                ref={index === 0 ? firstCardRef : undefined} // première card ref
+                ref={index === 0 ? firstCardRef : undefined}
               />
             ))}
           </div>
 
           {/* Flèches */}
-          <div className="absolute bottom-6 left-0 flex items-center gap-6">
+          <div className="absolute bottom-6 left-0 hidden lg:flex items-center gap-6">
             <button
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}

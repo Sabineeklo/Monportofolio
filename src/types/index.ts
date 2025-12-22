@@ -22,7 +22,8 @@ export interface ContactFormData {
 }
 
 export interface SocialLink {
-  name: string;
-  url: string;
-  icon: 'linkedin' | 'github' | 'mail' | 'phone';
+  name: string
+  href: string
+  icon: IconType
+  external?: boolean
 }

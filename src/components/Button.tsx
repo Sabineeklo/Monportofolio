@@ -12,6 +12,7 @@ interface ButtonProps {
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
   fullWidth?: boolean;
+  fullOnMobile?: boolean;
   disabled?: boolean;
   onClick?: () => void;
   className?: string;
@@ -25,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({
   icon,
   iconPosition = 'left',
   fullWidth = false,
+  fullOnMobile = false,
   disabled = false,
   onClick,
   className = '',
@@ -59,7 +61,11 @@ const Button: React.FC<ButtonProps> = ({
     ? 'opacity-50 cursor-not-allowed pointer-events-none'
     : 'cursor-pointer';
 
-  const widthStyles = fullWidth ? 'w-full' : '';
+const widthStyles = fullWidth
+  ? 'w-full'
+  : fullOnMobile
+  ? 'w-full sm:w-auto'
+  : '';
 
   /* ---------------- Classes ---------------- */
   const classes = [
