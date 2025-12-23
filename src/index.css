@@ -12,3 +12,11 @@
 body {
   @apply font-sans;
 }
+.border-gradient {
+  border: 6px solid transparent;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(to bottom, #FFFFFF, #E6F7FF) border-box;
+  background-clip: padding-box, border-box;
+}
+
