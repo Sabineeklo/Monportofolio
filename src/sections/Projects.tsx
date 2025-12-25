@@ -51,7 +51,7 @@ const Projects = () => {
   }, [])
 
   return (
-    <section className="relative py-20 lg:py-32 px-5">
+    <section id="projects" className="relative py-20 lg:py-32 px-5">
       {/* Background + overlay */}
       <div className="absolute inset-0">
         <img src={bg} alt="Background" className="w-full h-full object-cover" />

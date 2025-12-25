@@ -3,7 +3,7 @@ import { socialLinks } from '../data/content';
 
 const Contact = () => {
   return (
-    <section className='lg:py-40 py-20'>
+    <section id="contact" className='lg:py-40 py-20'>
       <div className='max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-start'>
         {/* Left */}
         <div className='lg:text-left text-center'>

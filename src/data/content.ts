@@ -19,7 +19,7 @@ export const personalInfo = {
   name: "Sabine EKLO",
   firstName: "Sabine",
   lastName: "EKLO",
-  title: "Front end Developer",
+  title: "Frontend Developer",
   bio: "I'm a passionate front-end developer specializing in creating beautiful, responsive, and user-friendly web applications. With expertise in modern JavaScript frameworks and a keen eye for design, I bring ideas to life through clean and efficient code.",
   image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop",
 };
