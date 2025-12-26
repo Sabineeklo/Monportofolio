@@ -8,7 +8,7 @@ const Technologies = () => {
       <div className='absolute inset-0'>
         <img
           src={bg}
-          alt='Technologies background'
+          alt='Arrière-plan technologies'
           className='w-full h-full object-cover'
         />
         <div className='absolute inset-0 bg-primary-500/95' />
@@ -18,12 +18,12 @@ const Technologies = () => {
       <div className='relative z-10 max-w-5xl mx-auto px-6'>
         {/* Title */}
         <h2 className='lg:text-4xl text-3xl md:text-4xl font-bold mb-5'>
-          Technologies I use in my work
+          Technologies que j'utilise
         </h2>
 
         <p className='text-primary-50 max-w-lg mx-auto mb-16 lg:px-12'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum
-          nunc dapibus ut etiam odio enim risus viverra adipiscing. Tristique.
+          Un ensemble de technologies modernes pour créer des applications
+          performantes, évolutives et centrées sur l'expérience utilisateur.
         </p>
 
         {/* Icons */}

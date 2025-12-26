@@ -3,16 +3,21 @@ import { socialLinks } from '../data/content';
 
 const Contact = () => {
   return (
-    <section id="contact" className='lg:py-40 py-20'>
+    <section id='contact' className='lg:py-40 py-20'>
       <div className='max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-start'>
         {/* Left */}
         <div className='lg:text-left text-center'>
           <h2 className='text-4xl font-bold text-primary-500 mb-6 '>
-            Let’s chat
+            Travaillons ensemble
           </h2>
 
-          <p className='text-primary-900 lg:max-w-[250px] max-w-sm lg:mb-8 mb-4'>
-            I will be happy to get in touch, feel free to reach out.
+          <p className='text-primary-900 lg:max-w-[300px] max-w-sm lg:mb-8 mb-4'>
+            Je serais ravie d'échanger avec vous sur vos projets. Je suis
+            actuellement en recherche d'un{' '}
+            <span className='text-primary-500 font-semibold'>
+              CDI, disponible immédiatement
+            </span>{' '}
+            et mobile sur toute la France pour démarrer une nouvelle aventure.
           </p>
 
           {/* Social icons */}
@@ -36,7 +41,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Right - Form */}
+        {/* Form */}
         <form className='space-y-10'>
           <div className='relative'>
             <input
@@ -61,7 +66,7 @@ const Contact = () => {
       peer-[&:not(:placeholder-shown)]:opacity-0
     '
             >
-              Name
+              Nom
             </label>
           </div>
 
@@ -115,11 +120,13 @@ const Contact = () => {
       peer-[&:not(:placeholder-shown)]:opacity-0
     '
             >
-              Your message
+              Votre message
             </label>
           </div>
 
-          <Button variant='filled' fullOnMobile>Get in touch</Button>
+          <Button variant='filled' fullOnMobile>
+            Envoyer
+          </Button>
         </form>
       </div>
     </section>

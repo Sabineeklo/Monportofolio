@@ -17,9 +17,10 @@ const Hero = () => {
           <div className='relative md:block flex flex-col justify-center items-center'>
             <img
               src={heroImage}
-              alt='Hero'
+              alt='Sabine - Développeuse Front-end'
               className='w-[380px] sm:w-[420px] md:w-[480px] lg:w-[590px] object-cover'
             />
+            
             {/* ================= TOP CARD ================= */}
             <div
               className='
@@ -64,20 +65,20 @@ const Hero = () => {
                 '
               />
 
-              <h2 className='text-2xl md:text-5xl font-medium mb-2'>Hi</h2>
+              <h2 className='text-2xl md:text-5xl font-medium mb-2'>Hi,</h2>
               <p className='text-base md:text-xl text-primary-100 leading-tight mb-4'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Elementum nunc dapibus ut etiam odio enim risus viverra.
+                Développeuse front-end qui aime créer des interfaces où chaque 
+                interaction compte.
               </p>
 
               <Link to='/about'>
                 <Button
                   variant='nofill'
-                  className='text-secondary-500 hover:bg-transparent'
+                  className='text-secondary-500 hover:border-secondary-500'
                   icon={<ArrowRight size={20} />}
                   iconPosition='right'
                 >
-                  Read more
+                  En savoir plus
                 </Button>
               </Link>
             </div>
@@ -88,7 +89,7 @@ const Hero = () => {
                 absolute
                 left-1/2 -translate-x-1/2 -top-14
                 md:left-auto md:-translate-x-0 md:-right-1/3 md:top-[18%]
-                bg-white/90 p-3 px-10 md:p-7 md:shadow-md
+                bg-white/90 p-3 px-8 md:p-7 md:shadow-md
                 transition-all duration-300
                 md:hover:-translate-y-3 md:hover:shadow-xl
               '
@@ -96,10 +97,10 @@ const Hero = () => {
               {/* Décor */}
               <span className='absolute -top-5 left-4 md:-top-[50px] md:-left-8 w-[40px] md:w-[75px] h-[38px] md:h-[70px] border-8 md:border-[14px] border-white backdrop-blur-xl' />
 
-              <p className='text-[45px] md:text-6xl font-bold text-primary-500 leading-tight text-center md:text-left'>
-                Frontend
+              <p className='text-[40px] md:text-5xl font-bold text-primary-500 leading-tight text-center md:text-left'>
+                Développeuse
                 <br />
-                <span className='font-medium'>Developer</span>
+                <span className='font-medium'>Front-end</span>
               </p>
             </div>
           </div>
@@ -111,7 +112,7 @@ const Hero = () => {
             fullOnMobile
             onClick={() => scrollToSection('projects')}
           >
-            See projects
+            Mes projets
           </Button>
 
           <Button
@@ -120,7 +121,7 @@ const Hero = () => {
             fullOnMobile
             onClick={() => scrollToSection('contact')}
           >
-            Contact me
+            Me contacter
           </Button>
         </div>
 
@@ -136,7 +137,7 @@ const Hero = () => {
               transition-all duration-300
             '
           >
-            Scroll down <ChevronDown size={18} />
+            Défiler vers le bas <ChevronDown size={18} />
           </button>
         </div>
       </div>

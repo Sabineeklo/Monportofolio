@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
     <>
       {/* ================= NAVBAR ================= */}
       <nav className="fixed top-0 w-full bg-secondary-50 shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-primary-500">
             {personalInfo.name}
           </h1>
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
               className="flex items-center gap-2 text-primary-700 hover:text-secondary-600 transition"
             >
               <Briefcase size={20} />
-              Projects
+              Projets
             </button>
 
             {/* CV PDF */}
@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
           <button
             onClick={() => setOpen(true)}
             className="md:hidden text-primary-700"
-            aria-label="Open menu"
+            aria-label="Ouvrir le menu"
           >
             <RiMenu3Fill size={28} />
           </button>
@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
         `}
       >
         {/* Top bar */}
-        <div className="absolute top-0 left-0 right-0 max-w-7xl mx-auto px-6 py-4 flex items-center justify-between bg-secondary-50">
+        <div className="absolute top-0 left-0 right-0 max-w-7xl mx-auto px-6 py-3 flex items-center justify-between bg-secondary-50">
           <span className="text-2xl font-bold text-primary-500">
             {personalInfo.name}
           </span>
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
           <button
             onClick={() => setOpen(false)}
             className="text-primary-700"
-            aria-label="Close menu"
+            aria-label="Fermer le menu"
           >
             <X size={28} />
           </button>
@@ -115,7 +115,7 @@ const Navbar: React.FC = () => {
               className="w-full border border-white/70 py-4 flex items-center justify-center gap-3 text-white text-lg hover:bg-white/10 transition"
             >
               <Briefcase size={22} />
-              Projects
+              Projets
             </button>
 
             {/* CV PDF */}

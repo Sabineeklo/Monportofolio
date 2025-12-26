@@ -55,7 +55,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
           >
             <h3 className="text-xl font-semibold mb-3">{title}</h3>
 
-            {/* Description tronquée à 3 lignes */}
+            {/* Description coupée à 3 lignes */}
             <p className="text-lg text-primary-100 leading-relaxed mb-6 line-clamp-4">
               {description}
             </p>
@@ -76,7 +76,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
                 duration-300
               "
             >
-              Read more <ArrowRight size={24} />
+              En savoir plus <ArrowRight size={24} />
             </span>
           </div>
         </Link>

@@ -46,7 +46,7 @@ const Button: React.FC<ButtonProps> = ({
     filled:
       'bg-primary-700 text-white hover:bg-secondary-600 active:scale-95 active:bg-primary-400',
     nofill:
-      'bg-transparent text-primary-700 hover:bg-white hover:text-secondary-600 active:scale-95',
+      'bg-transparent text-primary-700 hover:text-secondary-600 active:scale-95',
   };
 
   /* ---------------- Border ---------------- */
