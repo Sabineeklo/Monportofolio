@@ -1,17 +1,21 @@
-import Contact from "../sections/Contact"
-import Hero from "../sections/Hero"
-import Projects from "../sections/Projects"
-import Technologies from "../sections/Technologies"
+import Contact from "../sections/Contact";
+import Hero from "../sections/Hero";
+import Projects from "../sections/Projects";
+import Technologies from "../sections/Technologies";
 
-const Home = () => {
+interface HomeProps {
+  showAnimations: boolean;
+}
+
+const Home = ({ showAnimations }: HomeProps) => {
   return (
     <div>
-      <Hero />
+      <Hero isVisible={showAnimations} />
       <Projects />
       <Technologies />
       <Contact />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
