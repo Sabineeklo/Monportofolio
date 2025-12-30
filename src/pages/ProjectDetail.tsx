@@ -4,9 +4,13 @@ import { FiGithub } from 'react-icons/fi';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/content';
 import ProgressCircle from '../components/ProgressCircle';
+import { useEffect } from 'react';
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [id]);
   const navigate = useNavigate();
 
   const currentIndex = projects.findIndex((project) => project.id === id);
@@ -14,7 +18,11 @@ const ProjectDetail = () => {
   const project = projects[currentIndex];
 
   if (!project) {
-    return <div className='pt-40 text-center'>Project not found</div>;
+    return (
+      <div className='pt-40 text-center text-2xl text-primary-500'>
+        Project not found
+      </div>
+    );
   }
 
   const prevProject = projects[currentIndex - 1];
@@ -64,29 +72,29 @@ const ProjectDetail = () => {
             />
 
             <div className='flex gap-4'>
-                <button
-                  onClick={() => navigate(`/projects/${prevProject.id}`)}
-                  disabled={!prevProject}
-                  className={`${
-                    prevProject
-                      ? 'text-white hover:text-secondary-500'
-                      : 'text-white/50 cursor-not-allowed'
-                  }`}
-                >
-                  <ArrowLeft size={24} />
-                </button>
+              <button
+                onClick={() => navigate(`/projects/${prevProject.id}`)}
+                disabled={!prevProject}
+                className={`${
+                  prevProject
+                    ? 'text-white hover:text-secondary-500'
+                    : 'text-white/50 cursor-not-allowed'
+                }`}
+              >
+                <ArrowLeft size={24} />
+              </button>
 
-                <button
-                  onClick={() => navigate(`/projects/${nextProject.id}`)}
-                  disabled={!nextProject}
-                  className={`${
-                    nextProject
-                      ? 'text-white hover:text-secondary-500'
-                      : 'text-white/50 cursor-not-allowed'
-                  }`}
-                >
-                  <ArrowRight size={24} />
-                </button>
+              <button
+                onClick={() => navigate(`/projects/${nextProject.id}`)}
+                disabled={!nextProject}
+                className={`${
+                  nextProject
+                    ? 'text-white hover:text-secondary-500'
+                    : 'text-white/50 cursor-not-allowed'
+                }`}
+              >
+                <ArrowRight size={24} />
+              </button>
             </div>
           </div>
         </div>
@@ -115,7 +123,7 @@ const ProjectDetail = () => {
             <ul className='flex flex-wrap gap-3'>
               {project.technologies.map((tech) => (
                 <li
-                  key={tech}
+                  key={tech.name}
                   className='
                     px-4
                     py-2
@@ -131,7 +139,8 @@ const ProjectDetail = () => {
                     transition
                   '
                 >
-                  {tech}
+                  {tech.icon && <tech.icon className='inline-block mr-2' />}
+                  {tech.name}
                 </li>
               ))}
             </ul>

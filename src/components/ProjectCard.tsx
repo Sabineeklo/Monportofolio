@@ -11,6 +11,7 @@ interface ProjectCardProps {
 const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
   ({ project, className = '' }, ref) => {
     const { id, title, description, image } = project;
+    const displayedTechs = project.technologies.slice(0, 3);
 
     return (
       <div
@@ -19,23 +20,23 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
       >
         <Link
           to={`/projects/${id}`}
-          className="relative group block cursor-pointer focus:outline-none"
+          className='relative group block cursor-pointer focus:outline-none'
         >
           {/* Image avec bordure */}
-          <div className="border-[16px] border-secondary-50 relative overflow-hidden">
+          <div className='border-[16px] border-secondary-50 relative overflow-hidden'>
             <img
               src={image}
               alt={title}
-              className="lg:h-[550px] h-[340px] w-full object-cover"
+              className='lg:h-[550px] h-[340px] w-full object-cover'
             />
 
             {/* Overlay blanc semi-transparent */}
-            <div className="absolute inset-0 bg-white/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div className='absolute inset-0 bg-white/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
           </div>
 
           {/* Card superposée */}
           <div
-            className="
+            className='
               absolute
               lg:-bottom-8 
               -bottom-12
@@ -51,18 +52,30 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
               duration-300
               group-hover:-translate-y-1
               z-10
-            "
+            '
           >
-            <h3 className="text-xl font-semibold mb-3">{title}</h3>
+            <h3 className='text-xl font-semibold mb-3'>{title}</h3>
 
             {/* Description coupée à 3 lignes */}
-            <p className="text-lg text-primary-100 leading-relaxed mb-6 line-clamp-4">
+            <p className='text-lg text-primary-100 leading-relaxed mb-6 line-clamp-4'>
               {description}
             </p>
+            {/* Technologies */}
+            <div className='flex gap-3 text-white/80 mb-4'>
+              {displayedTechs.map((tech) => (
+                <span
+                  key={tech.name}
+                  className='flex items-center gap-3 text-sm'
+                  title={tech.name}
+                >
+                  {tech.icon && <tech.icon />}
+                </span>
+              ))}
+            </div>
 
             {/* bouton */}
             <span
-              className="
+              className='
                 inline-flex
                 items-center
                 justify-center
@@ -74,7 +87,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
                 text-lg
                 transition-all
                 duration-300
-              "
+              '
             >
               En savoir plus <ArrowRight size={24} />
             </span>
