@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Briefcase, FileText, Phone, X } from 'lucide-react';
 import { RiMenu3Fill } from 'react-icons/ri';
 import { personalInfo } from '../data/content';
@@ -36,17 +36,19 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* ================= NAVBAR ================= */}
-      <nav className="fixed top-0 w-full bg-secondary-50 shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-primary-500">
-            {personalInfo.name}
-          </h1>
+      <nav className='fixed top-0 w-full bg-secondary-50 shadow-sm z-50'>
+        <div className='max-w-7xl mx-auto px-6 py-3 flex justify-between items-center'>
+          <Link to='/' aria-label='Accueil'>
+            <h1 className='text-2xl font-bold text-primary-500'>
+              {personalInfo.name}
+            </h1>
+          </Link>
 
           {/* Desktop */}
-          <div className="hidden md:flex gap-8">
+          <div className='hidden md:flex gap-8'>
             <button
               onClick={() => handleScroll('projects')}
-              className="flex items-center gap-2 text-primary-700 hover:text-secondary-600 transition"
+              className='flex items-center gap-2 text-primary-700 hover:text-secondary-600 transition'
             >
               <Briefcase size={20} />
               Projets
@@ -54,10 +56,10 @@ const Navbar: React.FC = () => {
 
             {/* CV PDF */}
             <a
-              href="/cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-primary-700 hover:text-secondary-600 transition"
+              href='/cv.pdf'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center gap-2 text-primary-700 hover:text-secondary-600 transition'
             >
               <FileText size={20} />
               CV
@@ -65,7 +67,7 @@ const Navbar: React.FC = () => {
 
             <button
               onClick={() => handleScroll('contact')}
-              className="flex items-center gap-2 text-primary-700 hover:text-secondary-600 transition"
+              className='flex items-center gap-2 text-primary-700 hover:text-secondary-600 transition'
             >
               <Phone size={20} />
               Contact
@@ -75,8 +77,8 @@ const Navbar: React.FC = () => {
           {/* Burger */}
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden text-primary-700"
-            aria-label="Ouvrir le menu"
+            className='md:hidden text-primary-700'
+            aria-label='Ouvrir le menu'
           >
             <RiMenu3Fill size={28} />
           </button>
@@ -93,26 +95,27 @@ const Navbar: React.FC = () => {
         `}
       >
         {/* Top bar */}
-        <div className="absolute top-0 left-0 right-0 max-w-7xl mx-auto px-6 py-3 flex items-center justify-between bg-secondary-50">
-          <span className="text-2xl font-bold text-primary-500">
-            {personalInfo.name}
-          </span>
-
+        <div className='absolute top-0 left-0 right-0 max-w-7xl mx-auto px-6 py-3 flex items-center justify-between bg-secondary-50'>
+          <Link to='/' aria-label='Accueil'>
+            <span className='text-2xl font-bold text-primary-500'>
+              {personalInfo.name}
+            </span>
+          </Link>
           <button
             onClick={() => setOpen(false)}
-            className="text-primary-700"
-            aria-label="Fermer le menu"
+            className='text-primary-700'
+            aria-label='Fermer le menu'
           >
             <X size={28} />
           </button>
         </div>
 
         {/* Mobile menu buttons */}
-        <div className="h-full flex items-center justify-center">
-          <div className="flex flex-col gap-6 w-full max-w-sm px-6">
+        <div className='h-full flex items-center justify-center'>
+          <div className='flex flex-col gap-6 w-full max-w-sm px-6'>
             <button
               onClick={() => handleScroll('projects')}
-              className="w-full border border-white/70 py-4 flex items-center justify-center gap-3 text-white text-lg hover:bg-white/10 transition"
+              className='w-full border border-white/70 py-4 flex items-center justify-center gap-3 text-white text-lg hover:bg-white/10 transition'
             >
               <Briefcase size={22} />
               Projets
@@ -120,11 +123,11 @@ const Navbar: React.FC = () => {
 
             {/* CV PDF */}
             <a
-              href="/cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href='/cv.pdf'
+              target='_blank'
+              rel='noopener noreferrer'
               onClick={() => setOpen(false)}
-              className="w-full border border-white/70 py-4 flex items-center justify-center gap-3 text-white text-lg hover:bg-white/10 transition"
+              className='w-full border border-white/70 py-4 flex items-center justify-center gap-3 text-white text-lg hover:bg-white/10 transition'
             >
               <FileText size={22} />
               CV
@@ -132,7 +135,7 @@ const Navbar: React.FC = () => {
 
             <button
               onClick={() => handleScroll('contact')}
-              className="w-full border border-white/70 py-4 flex items-center justify-center gap-3 text-white text-lg hover:bg-white/10 transition"
+              className='w-full border border-white/70 py-4 flex items-center justify-center gap-3 text-white text-lg hover:bg-white/10 transition'
             >
               <Phone size={22} />
               Contact
