@@ -10,7 +10,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
 
   useEffect(() => {
     // Simule le chargement progressif
-    const duration = 2500; // 2.5 secondes
+    const duration = 2000; // 2 secondes
     const interval = 20; // Update toutes les 20ms
     const steps = duration / interval;
     const increment = 100 / steps;

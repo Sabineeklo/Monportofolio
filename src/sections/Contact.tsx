@@ -1,7 +1,40 @@
+import { useRef, useState } from 'react';
 import Button from '../components/Button';
 import { socialLinks } from '../data/content';
+import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
+
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    setSending(true);
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          toast.success("Message envoyé avec succès ! Je vous réponds au plus vite.")
+          setSending(false);
+          formRef.current?.reset();
+        },
+        () => {
+          toast.error("Échec de l'envoi du message. Veuillez réessayer.")
+          setSending(false);
+        }
+      );
+  };
+
   return (
     <section id='contact' className='lg:py-40 py-20'>
       <div className='max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-start'>
@@ -29,11 +62,7 @@ const Contact = () => {
                 target={external ? '_blank' : undefined}
                 rel={external ? 'noopener noreferrer' : undefined}
                 aria-label={name}
-                className='
-            text-secondary-600
-            transition-transform duration-200
-            hover:scale-110
-          '
+                className='text-secondary-600 transition-transform duration-200 hover:scale-110'
               >
                 <Icon size={20} />
               </a>
@@ -42,91 +71,33 @@ const Contact = () => {
         </div>
 
         {/* Form */}
-        <form className='space-y-10'>
+        <form ref={formRef} onSubmit={handleSubmit} className='space-y-10'>
           <div className='relative'>
-            <input
-              type='text'
-              id='name'
-              placeholder=' '
-              className='
-      peer w-full bg-transparent
-      border-b-2  border-primary-200
-      focus:border-secondary-300
-      outline-none py-2
-    '
-            />
-
-            <label
-              htmlFor='name'
-              className='
-      absolute left-0 top-2
-      text-lg text-primary-900
-      transition-opacity duration-200
-      peer-focus:opacity-0
-      peer-[&:not(:placeholder-shown)]:opacity-0
-    '
-            >
+            <input type='text' name='name' id='name' placeholder=' ' className='peer w-full bg-transparent border-b-2 border-primary-200 focus:border-secondary-300 outline-none py-2' required />
+            <label htmlFor='name' className='absolute left-0 top-2 text-lg text-primary-900 transition-opacity duration-200 peer-focus:opacity-0 peer-[&:not(:placeholder-shown)]:opacity-0'>
               Nom
             </label>
           </div>
 
           <div className='relative'>
-            <input
-              type='email'
-              id='email'
-              placeholder=' '
-              className='
-      peer w-full bg-transparent
-      border-b-2 border-primary-200
-      focus:border-secondary-300
-      outline-none py-2
-    '
-            />
-
-            <label
-              htmlFor='email'
-              className='
-      absolute left-0 top-2
-      text-lg text-primary-900
-      transition-opacity duration-200
-      peer-focus:opacity-0
-      peer-[&:not(:placeholder-shown)]:opacity-0
-    '
-            >
+            <input type='email' name='email' id='email' placeholder=' ' aria-required className='peer w-full bg-transparent border-b-2 border-primary-200 focus:border-secondary-300 outline-none py-2' required />
+            <label htmlFor='email' className='absolute left-0 top-2 text-lg text-primary-900 transition-opacity duration-200 peer-focus:opacity-0 peer-[&:not(:placeholder-shown)]:opacity-0'>
               Email
             </label>
           </div>
 
           <div className='relative'>
-            <textarea
-              id='message'
-              rows={3}
-              placeholder=' '
-              className='
-      peer w-full bg-transparent
-      border-b-2 border-primary-200
-      focus:border-secondary-300
-      outline-none resize-none py-2
-    '
-            />
-
-            <label
-              htmlFor='message'
-              className='
-      absolute left-0 top-2
-      text-lg text-primary-900
-      transition-opacity duration-200
-      peer-focus:opacity-0
-      peer-[&:not(:placeholder-shown)]:opacity-0
-    '
-            >
+            <textarea name='message' id='message' rows={3} placeholder=' ' aria-required className='peer w-full bg-transparent border-b-2 border-primary-200 focus:border-secondary-300 outline-none resize-none py-2' required />
+            <label htmlFor='message' className='absolute left-0 top-2 text-lg text-primary-900 transition-opacity duration-200 peer-focus:opacity-0 peer-[&:not(:placeholder-shown)]:opacity-0'>
               Votre message
             </label>
           </div>
 
-          <Button variant='filled' fullOnMobile>
-            Envoyer
+          <Button type='submit' variant='filled' fullOnMobile disabled={sending}>
+            {sending ? 'Envoi...' : 'Envoyer'}
           </Button>
+
+          
         </form>
       </div>
     </section>

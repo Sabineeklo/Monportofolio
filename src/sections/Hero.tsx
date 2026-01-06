@@ -1,4 +1,5 @@
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { MdKeyboardDoubleArrowDown } from 'react-icons/md';
 import heroImage from '../assets/heroImg.png';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
@@ -18,66 +19,65 @@ const Hero = ({ isVisible }: HeroProps) => {
     <section className='relative overflow-hidden py-20 pt-40 md:py-24 bg-gradient-to-b from-[#E6F7FF] to-[#FFFFFF]'>
       <div className='relative z-10 max-w-6xl mx-auto px-6'>
         <div className='flex justify-center items-center'>
-          {/* IMAGE WRAPPER */}
-          <div className='relative md:block flex flex-col justify-center items-center'>
-            
+          {/* ================= IMAGE WRAPPER ================= */}
+          <motion.div
+            className='relative md:block flex flex-col justify-center items-center'
+            initial={{ opacity: 0 }}
+            animate={isVisible ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8 }}
+          >
             {/* ================= IMAGE ================= */}
             <motion.img
               src={heroImage}
               alt='Sabine - Développeuse Front-end'
               className='w-[380px] sm:w-[420px] md:w-[480px] lg:w-[590px] object-cover'
-              initial={{ opacity: 0, x: -80 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.1 }}
             />
 
             {/* ================= TOP CARD ================= */}
-            <div
-              className='
-                hidden md:block
-                absolute -left-1/2 top-0 -translate-y-1/2
-                border-4 border-white
-                p-7 w-[380px] h-[460px] -z-10
-              '
+            <motion.div
+              className='hidden md:block absolute -left-1/2 top-0 -translate-y-1/2 border-4 border-white p-7 w-[380px] h-[460px] -z-10'
+              initial={{ opacity: 0 }}
+              animate={isVisible ? { opacity: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
             />
 
             {/* ================= BOTTOM CARD ================= */}
-            <div
-              className='
-                hidden md:block
-                absolute -right-1/2 -bottom-[98%] -translate-y-1/2
-                border-4 border-secondary-50
-                p-7 w-[380px] h-[600px] -z-10
-              '
+            <motion.div
+              className='hidden md:block absolute -right-1/2 -bottom-[98%] -translate-y-1/2 border-4 border-secondary-50 p-7 w-[380px] h-[600px] -z-10'
+              initial={{ opacity: 0 }}
+              animate={isVisible ? { opacity: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
             />
 
             {/* ================= LEFT CARD ================= */}
             <motion.div
-              initial={{ opacity: 0, x: -80 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+              className='relative md:absolute -top-16 md:-left-1/3 md:top-2/3 md:-translate-y-1/2'
+              initial={{ opacity: 0 }}
+              animate={isVisible ? { opacity: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div
                 className='
-                  relative
-                  md:absolute -top-16 md:-left-1/3 md:top-2/3 md:-translate-y-1/2
-                  bg-primary-500 text-white p-3 md:p-7
+                  bg-primary-500 text-white
+                  p-3 md:p-7
                   max-w-[300px] md:max-w-[400px]
-                  shadow-lg transition-all duration-300
-                  md:hover:-translate-y-[60%] md:hover:shadow-xl
+                  shadow-lg
+                  transition-all duration-300 transform-gpu
+                  md:hover:-translate-y-6 md:hover:shadow-xl
                 '
               >
-                {/* Décor */}
                 <span
                   className='
                     absolute
-                    -top-4 right-3
-                    md:top-auto md:-bottom-6 md:-right-8
+                    -top-4 md:top-auto
+                    right-3 md:-bottom-6 md:-right-8
                     w-[40px] md:w-[75px]
                     h-[38px] md:h-[70px]
                     border-8 md:border-[14px]
-                    border-white
-                    backdrop-blur-lg
+                    border-white backdrop-blur-lg
                   '
                 />
 
@@ -102,41 +102,44 @@ const Hero = ({ isVisible }: HeroProps) => {
 
             {/* ================= RIGHT CARD ================= */}
             <motion.div
-              initial={{ opacity: 0, x: 80 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+              className='absolute left-1/2 -translate-x-1/2 -top-14 md:left-auto md:-translate-x-0 md:-right-1/3 md:top-[18%]'
+              initial={{ opacity: 0 }}
+              animate={isVisible ? { opacity: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div
                 className='
-                  absolute
-                  left-1/2 -translate-x-1/2 -top-14
-                  md:left-auto md:-translate-x-0 md:-right-1/3 md:top-[18%]
-                  bg-white/90 p-3 px-8 md:p-7 md:shadow-md
-                  transition-all duration-300
+                  bg-white/90
+                  p-3 px-6 md:p-7
+                  shadow-md
+                  transition-all duration-300 transform-gpu
                   md:hover:-translate-y-3 md:hover:shadow-xl
                 '
               >
-                {/* Décor */}
                 <span className='absolute -top-5 left-4 md:-top-[50px] md:-left-8 w-[40px] md:w-[75px] h-[38px] md:h-[70px] border-8 md:border-[14px] border-white backdrop-blur-xl' />
 
-                <p className='text-[40px] md:text-5xl font-bold text-primary-500 leading-tight text-center md:text-left'>
+                <p className='text-4xl md:text-5xl font-bold text-primary-500 leading-tight text-center md:text-left'>
                   Développeuse
                   <br />
                   <span className='font-medium'>Front-end</span>
                 </p>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
 
         {/* ================= BUTTONS ================= */}
         <motion.div
           className='-mt-10 md:mt-10 flex flex-col sm:flex-row justify-center gap-4 max-w-[300px] mx-auto'
-          initial={{ opacity: 0, y: 40 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1 }}
+          initial={{ opacity: 0 }}
+          animate={isVisible ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.9 }}
         >
-          <Button variant='filled' fullOnMobile onClick={() => scrollToSection('projects')}>
+          <Button
+            variant='filled'
+            fullOnMobile
+            onClick={() => scrollToSection('projects')}
+          >
             Mes projets
           </Button>
 
@@ -154,20 +157,25 @@ const Hero = ({ isVisible }: HeroProps) => {
         <motion.div
           className='mt-12 hidden md:flex justify-center'
           initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 1.2 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
         >
           <button
             onClick={() => scrollToSection('projects')}
-            className='
-              text-sm font-semibold text-primary-600
-              flex items-center gap-2
-              hover:text-secondary-600
-              cursor-pointer
-              transition-all duration-300
-            '
+            className='text-sm font-semibold text-primary-600 hover:text-secondary-600 transition-colors'
           >
-            Défiler vers le bas <ChevronDown size={18} />
+            <motion.span
+              className='flex items-center gap-2'
+              animate={{ y: [0, 8, 0] }}
+              transition={{
+                duration: 1.4,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            >
+              Défiler vers le bas
+              <MdKeyboardDoubleArrowDown size={18} />
+            </motion.span>
           </button>
         </motion.div>
       </div>
