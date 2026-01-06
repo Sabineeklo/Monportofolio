@@ -130,7 +130,7 @@ const Hero = ({ isVisible }: HeroProps) => {
 
         {/* ================= BUTTONS ================= */}
         <motion.div
-          className='-mt-10 md:mt-10 flex flex-col sm:flex-row justify-center gap-4 max-w-[300px] mx-auto'
+          className='-mt-10 md:mt-10 flex flex-col sm:flex-row justify-center gap-4 max-w-[300px] mx-auto relative z-30'
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.9 }}
