@@ -20,7 +20,7 @@ const ProjectDetail = () => {
   if (!project) {
     return (
       <div className='pt-40 text-center text-2xl text-primary-500'>
-        Project not found
+        Projet introuvable
       </div>
     );
   }
@@ -80,6 +80,7 @@ const ProjectDetail = () => {
                     ? 'text-white hover:text-secondary-500'
                     : 'text-white/50 cursor-not-allowed'
                 }`}
+                aria-label='Projet précédent'
               >
                 <ArrowLeft size={24} />
               </button>
@@ -92,6 +93,7 @@ const ProjectDetail = () => {
                     ? 'text-white hover:text-secondary-500'
                     : 'text-white/50 cursor-not-allowed'
                 }`}
+                aria-label='Projet suivant'
               >
                 <ArrowRight size={24} />
               </button>
@@ -117,7 +119,7 @@ const ProjectDetail = () => {
         {project.technologies?.length > 0 && (
           <div>
             <h3 className='text-primary-700 text-lg md:text-2xl font-bold mb-4'>
-              Technologies
+              Technologies utilisées
             </h3>
 
             <ul className='flex flex-wrap gap-3'>
@@ -208,7 +210,7 @@ const ProjectDetail = () => {
       {/* ================= OTHER PROJECTS ================= */}
       <section className='max-w-6xl mx-auto px-7 md:py-32 py-20'>
         <h2 className='text-xl md:text-3xl text-primary-900 font-semibold mb-12'>
-          Other projects
+          Autres projets
         </h2>
 
         <div className='grid mx-7 md:mx-0 gap-16 sm:grid-cols-2'>
