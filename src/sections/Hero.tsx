@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { MdKeyboardDoubleArrowDown } from 'react-icons/md';
-import heroImage from '../assets/heroImg.png';
+import heroImage from '../assets/dev.jpeg';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -30,7 +30,7 @@ const Hero = ({ isVisible }: HeroProps) => {
             <motion.img
               src={heroImage}
               alt='Sabine - Développeuse Front-end'
-              className='w-[380px] sm:w-[420px] md:w-[480px] lg:w-[590px] object-cover'
+              className='w-[380px] sm:w-[420px] md:w-[480px] md:max-h-[665px] lg:w-[520px] object-cover'
               initial={{ opacity: 0, scale: 0.96 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
@@ -54,7 +54,7 @@ const Hero = ({ isVisible }: HeroProps) => {
 
             {/* ================= LEFT CARD ================= */}
             <motion.div
-              className='relative md:absolute -top-16 md:-left-1/3 md:top-2/3 md:-translate-y-1/2'
+              className='relative md:absolute -top-16 lg:-left-[50%] md:-left-[30%] md:top-2/3 md:-translate-y-1/2'
               initial={{ opacity: 0 }}
               animate={isVisible ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -62,8 +62,8 @@ const Hero = ({ isVisible }: HeroProps) => {
               <div
                 className='
                   bg-primary-500 text-white
-                  p-3 md:p-7
-                  max-w-[300px] md:max-w-[400px]
+                  p-3 lg:p-6
+                  max-w-[300px] lg:max-w-[400px]
                   shadow-lg
                   transition-all duration-300 transform-gpu
                   md:hover:-translate-y-6 md:hover:shadow-xl
@@ -81,7 +81,7 @@ const Hero = ({ isVisible }: HeroProps) => {
                   '
                 />
 
-                <h2 className='text-2xl md:text-5xl font-medium mb-2'>Hi,</h2>
+                <h2 className='text-2xl md:text-4xl lg:text-5xl font-medium mb-2'>Hi,</h2>
                 <p className='text-base md:text-xl text-primary-100 leading-tight mb-4'>
                   Développeuse front-end qui aime créer des interfaces où chaque
                   interaction compte.
@@ -102,7 +102,7 @@ const Hero = ({ isVisible }: HeroProps) => {
 
             {/* ================= RIGHT CARD ================= */}
             <motion.div
-              className='absolute left-1/2 -translate-x-1/2 -top-14 md:left-auto md:-translate-x-0 md:-right-1/3 md:top-[18%]'
+              className='absolute left-1/2 -translate-x-1/2 -top-14 lg:left-auto md:left-[75%] md:-translate-x-0 md:-right-[52%] md:top-[20%]'
               initial={{ opacity: 0 }}
               animate={isVisible ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -110,7 +110,8 @@ const Hero = ({ isVisible }: HeroProps) => {
               <div
                 className='
                   bg-white/90
-                  p-3 px-6 md:p-7
+                  p-3 px-6 lg:p-6 md:px-4
+                  md:max-w-[280px] lg:max-w-[400px]
                   shadow-md
                   transition-all duration-300 transform-gpu
                   md:hover:-translate-y-3 md:hover:shadow-xl
@@ -118,7 +119,7 @@ const Hero = ({ isVisible }: HeroProps) => {
               >
                 <span className='absolute -top-5 left-4 md:-top-[50px] md:-left-8 w-[40px] md:w-[75px] h-[38px] md:h-[70px] border-8 md:border-[14px] border-white backdrop-blur-xl' />
 
-                <p className='text-4xl md:text-5xl font-bold text-primary-500 leading-tight text-center md:text-left'>
+                <p className='text-4xl lg:text-5xl font-bold text-primary-500 leading-tight text-center md:text-left'>
                   Développeuse
                   <br />
                   <span className='font-medium'>Front-end</span>

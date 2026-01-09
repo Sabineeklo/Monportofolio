@@ -36,15 +36,15 @@ const Contact = () => {
   };
 
   return (
-    <section id='contact' className='lg:py-40 py-20'>
-      <div className='max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-start'>
+    <section id='contact' className='md:py-40 py-20'>
+      <div className='max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-24 items-start'>
         {/* Left */}
-        <div className='lg:text-left text-center'>
+        <div className='md:text-left text-center'>
           <h2 className='text-4xl font-bold text-primary-500 mb-6 '>
             Travaillons ensemble
           </h2>
 
-          <p className='text-primary-900 lg:max-w-[300px] max-w-sm lg:mb-8 mb-4'>
+          <p className='text-primary-900 md:max-w-[300px] max-w-sm md:mb-8 mb-4'>
             Je serais ravie d'échanger avec vous sur vos projets. Je suis
             actuellement en recherche d'un{' '}
             <span className='text-primary-500 font-semibold'>

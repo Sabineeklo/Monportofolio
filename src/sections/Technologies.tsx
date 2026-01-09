@@ -21,17 +21,17 @@ const Technologies = () => {
           Technologies que j'utilise
         </h2>
 
-        <p className='text-primary-50 max-w-lg mx-auto mb-16 lg:px-12'>
+        <p className='text-primary-50 max-w-lg mx-auto mb-16 md:px-12'>
           Un ensemble de technologies modernes pour créer des applications
           performantes, évolutives et centrées sur l'expérience utilisateur.
         </p>
 
         {/* Icons */}
-        <div className='flex justify-center gap-12 lg:gap-16 flex-wrap'>
+        <div className='flex justify-center gap-12 md:gap-16 flex-wrap'>
           {technologies.map(({ name, icon: Icon }) => (
             <div
               key={name}
-              className='relative group lg:w-32 h-20 flex items-center justify-center'
+              className='relative group md:w-32 h-20 flex items-center justify-center'
             >
               {/* Icône */}
               <Icon
@@ -47,7 +47,7 @@ const Technologies = () => {
               <span
                 className='
         absolute
-        lg:text-xl font-semibold
+        md:text-xl font-semibold
         text-secondary-100
         opacity-0
         transition-opacity duration-300
