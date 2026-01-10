@@ -29,7 +29,7 @@ export const projects: Project[] = [
     title: 'Quote Generator',
     description: `Application de génération de citations développée en React.
 Elle permet d'afficher des citations aléatoires via une API externe, de les ajouter en favoris et de les partager.
-Mise en place d'une navigation entre pages, d'une gestion d'état locale et de la persistance des données via le localStorage.
+Mise en place d'une navigation entre pages, d'une gestion d'état locale et de la persistance des données via le LocalStorage.
 Le projet met l'accent sur une interface responsive, une expérience utilisateur fluide et une architecture de composants réutilisables.`,
     image: '/projects/quote-generator.png',
     technologies: [
