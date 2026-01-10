@@ -8,6 +8,7 @@ export interface Project {
   technologies: Technology[];
   link?: string;
   github?: string;
+  badge?: boolean;
 }
 
 export interface Technology {

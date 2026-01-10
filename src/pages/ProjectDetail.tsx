@@ -5,6 +5,7 @@ import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/content';
 import ProgressCircle from '../components/ProgressCircle';
 import { useEffect } from 'react';
+import NotFound from '../components/NotFound';
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -19,9 +20,7 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className='pt-40 text-center text-2xl text-primary-500'>
-        Projet introuvable
-      </div>
+      <NotFound />
     );
   }
 
@@ -218,6 +217,7 @@ const ProjectDetail = () => {
             <ProjectCard
               key={project.id}
               project={project}
+              isCurrent={project.id === 'p2pw'}
               className='!w-full pb-12'
             />
           ))}

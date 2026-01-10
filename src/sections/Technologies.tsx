@@ -1,4 +1,4 @@
-import bg from '../assets/bg-projects.png';
+import bg from '../assets/bg-technos.png';
 import { technologies } from '../data/content';
 
 const Technologies = () => {

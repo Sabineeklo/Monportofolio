@@ -5,11 +5,12 @@ import type { Project } from '../types';
 
 interface ProjectCardProps {
   project: Project;
+  isCurrent?: boolean;
   className?: string;
 }
 
 const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
-  ({ project, className = '' }, ref) => {
+  ({ project, isCurrent = false, className = '' }, ref) => {
     const { id, title, description, image } = project;
     const displayedTechs = project.technologies.slice(0, 3);
 
@@ -32,6 +33,33 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
 
             {/* Overlay blanc semi-transparent */}
             <div className='absolute inset-0 bg-white/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
+            {/*  BADGE  */}
+            {isCurrent && (
+              <div
+                className='
+                absolute
+                top-0
+                left-0
+                z-20
+                flex
+                items-center
+                gap-2
+                bg-white/80
+                text-primary-700
+                px-4
+                py-2
+                shadow-md
+                text-xs
+                font-semibold
+              '
+              >
+                <span className='relative flex size-3'>
+                  <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary-400 opacity-75'></span>
+                  <span className='relative inline-flex size-3 rounded-full bg-secondary-500'></span>
+                </span>
+                Vous êtes ici
+              </div>
+            )}
           </div>
 
           {/* Card superposée */}

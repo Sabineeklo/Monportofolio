@@ -1,6 +1,6 @@
 import type { Project, Technology, SocialLink } from '../types/index.ts';
-import { FaNodeJs, FaJs, FaGitAlt } from "react-icons/fa6";
-import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa'
+import { FaNodeJs, FaJs, FaGitAlt } from 'react-icons/fa6';
+import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa';
 import {
   SiHtml5,
   SiCss3,
@@ -8,84 +8,66 @@ import {
   SiTypescript,
   SiMongodb,
   SiTailwindcss,
-  SiFigma
-} from 'react-icons/si'
-
-
-
+  SiFigma,
+} from 'react-icons/si';
 
 // Informations personnelles
 export const personalInfo = {
-  name: "Sabine EKLO",
-  firstName: "Sabine",
-  lastName: "EKLO",
-  title: "Développeuse Front-end",
+  name: 'Sabine EKLO',
+  firstName: 'Sabine',
+  lastName: 'EKLO',
+  title: 'Développeuse Front-end',
   bio: "Je suis une développeuse front-end passionnée, spécialisée dans la création d'applications web belles, réactives et conviviales. Grâce à mon expertise dans les frameworks JavaScript modernes et mon regard attentif à la conception, je donne vie aux idées grâce à un code clair et efficace.",
-  image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop",
+  image: '',
 };
 
 // Projets
 export const projects: Project[] = [
   {
-    id: "p1",
-    title: "Quote Generation",
-    description: "A dynamic quote generator that displays random proverbs and inspirational quotes. Features smooth animations and an intuitive interface for discovering wisdom.",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=400&fit=crop",
-    technologies: [{ name: "HTML", icon: SiHtml5 }, { name: "CSS", icon: SiCss3 }, { name: "JavaScript", icon: FaJs },{ name: "React", icon: SiReact }, { name: "TypeScript", icon: SiTypescript }],
-    link: "https://example.com/quote-generation",
-    github: "https://github.com/example/quote-generation"
+    id: 'p1qg',
+    title: 'Quote Generator',
+    description: `Application de génération de citations développée en React.
+Elle permet d'afficher des citations aléatoires via une API externe, de les ajouter en favoris et de les partager.
+Mise en place d'une navigation entre pages, d'une gestion d'état locale et de la persistance des données via le localStorage.
+Le projet met l'accent sur une interface responsive, une expérience utilisateur fluide et une architecture de composants réutilisables.`,
+    image: '/projects/quote-generator.png',
+    technologies: [
+      { name: 'React', icon: SiReact },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'Tailwind CSS', icon: SiTailwindcss },
+    ],
+    link: 'https://quote-generator-react-omega.vercel.app/',
+    github: 'https://github.com/Sabineeklo/quote-generator-react'
   },
   {
-    id: "p2",
-    title: "Enterprise Dashboard",
-    description: "Real-time analytics dashboard for business operations. Handles 10k+ concurrent users with live data visualization and performance monitoring.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    technologies: [{ name: "React", icon: SiReact }, { name: "TypeScript", icon: SiTypescript }, { name: "Node.js", icon: FaNodeJs }],
-  },
-  {
-    id: "p3",
-    title: "E-commerce Platform",
-    description: "Full-stack e-commerce solution with product catalog, shopping cart, and secure payment integration. Built for scalability and performance.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
-    technologies: [{ name: "React", icon: SiReact }, { name: "MongoDB", icon: SiMongodb }, { name: "Node.js", icon: FaNodeJs }],
-  },
-  {
-    id: "p4",
-    title: "Quote Generation",
-    description: "A dynamic quote generator that displays random proverbs and inspirational quotes. Features smooth animations and an intuitive interface for discovering wisdom.",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=400&fit=crop",
-    technologies: [{ name: "HTML", icon: SiHtml5 }, { name: "CSS", icon: SiCss3 }, { name: "JavaScript", icon: FaJs }],
-  },
-  {
-    id: "p5",
-    title: "Enterprise Dashboard",
-    description: "Real-time analytics dashboard for business operations. Handles 10k+ concurrent users with live data visualization and performance monitoring.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    technologies: [{ name: "React", icon: SiReact }, { name: "TypeScript", icon: SiTypescript }, { name: "Node.js", icon: FaNodeJs }],
-  },
-  {
-    id: "p6",
-    title: "E-commerce Platform",
-    description: "Full-stack e-commerce solution with product catalog, shopping cart, and secure payment integration. Built for scalability and performance.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
-    technologies: [{ name: "React", icon: SiReact }, { name: "MongoDB", icon: SiMongodb }, { name: "Node.js", icon: FaNodeJs }],
+    id: 'p2pw',
+    title: 'Portfolio',
+    description: `Portfolio personnel développé en React afin de présenter mes projets, mon parcours et mes compétences.
+Le site a été conçu comme une application front-end à part entière, avec une attention particulière portée à la clarté de l’information, à la performance et à l’expérience utilisateur.
+Il évoluera progressivement avec l’ajout de nouveaux projets et de fonctionnalités.`,
+    image: '/projects/portfolio.png',
+    technologies: [
+      { name: 'React', icon: SiReact },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'Tailwind CSS', icon: SiTailwindcss },
+    ],
+    github: 'https://github.com/Sabineeklo/Monportofolio',
   },
 ];
 
 // Technologies
 export const technologies: Technology[] = [
-  { name: "HTML5", icon: SiHtml5 },
-  { name: "CSS3", icon: SiCss3 },
-  { name: "JavaScript", icon: FaJs },
-  { name: "TypeScript", icon: SiTypescript },
-  { name: "React", icon: SiReact },
-  { name: "Tailwind CSS", icon: SiTailwindcss },
-  { name: "Node.js", icon: FaNodeJs },
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "Git", icon: FaGitAlt },
-  { name: "Figma", icon: SiFigma },
+  { name: 'HTML5', icon: SiHtml5 },
+  { name: 'CSS3', icon: SiCss3 },
+  { name: 'JavaScript', icon: FaJs },
+  { name: 'TypeScript', icon: SiTypescript },
+  { name: 'React', icon: SiReact },
+  { name: 'Tailwind CSS', icon: SiTailwindcss },
+  { name: 'Node.js', icon: FaNodeJs },
+  { name: 'MongoDB', icon: SiMongodb },
+  { name: 'Git', icon: FaGitAlt },
+  { name: 'Figma', icon: SiFigma },
 ];
-
 
 // Liens sociaux
 export const socialLinks: SocialLink[] = [
@@ -106,4 +88,4 @@ export const socialLinks: SocialLink[] = [
     href: 'mailto:ekloafisabine@gmail.com',
     icon: FaEnvelope,
   },
-]
+];

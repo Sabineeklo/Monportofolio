@@ -83,6 +83,7 @@ const Projects = () => {
                 key={project.id}
                 project={project}
                 ref={index === 0 ? firstCardRef : undefined}
+                isCurrent={project.id === 'p2pw'}
               />
             ))}
           </div>

@@ -6,6 +6,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import MainLayout from './layouts/MainLayout';
 import NoFooterLayout from './layouts/NoFooterLayout';
 import LoadingScreen from './components/LoadingScreen';
+import NotFound from './components/NotFound';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -51,6 +52,7 @@ const App = () => {
 
           <Route element={<NoFooterLayout />}>
             <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </div>
