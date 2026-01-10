@@ -1,8 +1,9 @@
 # Monportofolio
 
-Portfolio personnel développé pour présenter mes **projets**, mes **compétences techniques** et mon **parcours** en tant que développeur.
+Portfolio personnel développé pour présenter mes **projets**, mes **compétences techniques** et mon **parcours** en tant que développeuse front-end.
 
-Ce projet a été conçu avec une approche simple, moderne et performante, en mettant l’accent sur l’expérience utilisateur et le responsive design.
+## 🎯 Objectif
+Ce portfolio a été conçu comme un projet front-end à part entière, avec une attention particulière portée à la clarté du contenu, à l’expérience utilisateur et à la maintenabilité du code.
 
 ---
 
@@ -24,9 +25,19 @@ Ce projet a été conçu avec une approche simple, moderne et performante, en me
 
 ---
 
+## 📂 Architecture
+Le projet repose sur une structure claire et modulaire, facilitant l’évolution du site et l’ajout de nouveaux projets.
+
+## 🚀 Lancer le projet en local
+```bash
+npm install
+npm run dev
+```
+
 
 ## 📫 Contact
 
 N’hésite pas à me contacter pour toute opportunité ou collaboration.
 
 ---
+

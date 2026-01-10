@@ -10,6 +10,7 @@ import {
   SiTailwindcss,
   SiFigma,
 } from 'react-icons/si';
+import devImg from '../assets/dev.jpeg';
 
 // Informations personnelles
 export const personalInfo = {
@@ -18,7 +19,7 @@ export const personalInfo = {
   lastName: 'EKLO',
   title: 'Développeuse Front-end',
   bio: "Je suis une développeuse front-end passionnée, spécialisée dans la création d'applications web belles, réactives et conviviales. Grâce à mon expertise dans les frameworks JavaScript modernes et mon regard attentif à la conception, je donne vie aux idées grâce à un code clair et efficace.",
-  image: '',
+  image: devImg,
 };
 
 // Projets

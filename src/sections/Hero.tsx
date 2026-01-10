@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { MdKeyboardDoubleArrowDown } from 'react-icons/md';
-import heroImage from '../assets/dev.jpeg';
 import Button from '../components/Button';
+import { personalInfo } from '../data/content';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -28,7 +28,7 @@ const Hero = ({ isVisible }: HeroProps) => {
           >
             {/* ================= IMAGE ================= */}
             <motion.img
-              src={heroImage}
+              src={personalInfo.image}
               alt='Sabine - Développeuse Front-end'
               className='w-[380px] sm:w-[420px] md:w-[480px] md:max-h-[665px] lg:w-[520px] object-cover'
               initial={{ opacity: 0, scale: 0.96 }}

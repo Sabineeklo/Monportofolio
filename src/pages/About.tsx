@@ -1,4 +1,3 @@
-import heroImage from '../assets/dev.jpeg';
 import { personalInfo } from '../data/content';
 
 const About = () => {
@@ -53,7 +52,7 @@ const About = () => {
 
         <div className='flex flex-col items-center gap-4 md:pl-14 pt-2'>
           <img
-            src={heroImage}
+            src={personalInfo.image}
             alt='Image Sabine - Développeuse Front-end'
             className='w-[380px] sm:w-[380px] md:w-[480px] md:max-h-[595px] object-cover rounded-lg shadow-xl'
           />
