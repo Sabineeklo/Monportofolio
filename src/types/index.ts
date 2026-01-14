@@ -1,5 +1,6 @@
 import type { IconType } from 'react-icons'
 
+export type ProjectType = 'professional' | 'personal';
 export interface Project {
   id: string;
   title: string;
@@ -8,7 +9,8 @@ export interface Project {
   technologies: Technology[];
   link?: string;
   github?: string;
-  badge?: boolean;
+  type: ProjectType;
+  isCurrent?: boolean;
 }
 
 export interface Technology {

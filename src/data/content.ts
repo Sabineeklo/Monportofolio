@@ -9,8 +9,11 @@ import {
   SiMongodb,
   SiTailwindcss,
   SiFigma,
+  SiJest,
+  SiTestinglibrary,
 } from 'react-icons/si';
 import devImg from '../assets/dev.jpeg';
+import { TbApi } from 'react-icons/tb';
 
 // Informations personnelles
 export const personalInfo = {
@@ -25,7 +28,55 @@ export const personalInfo = {
 // Projets
 export const projects: Project[] = [
   {
-    id: 'p1qg',
+    id: 'pprbt',
+    title: 'Espaces à contenus dédiés - B.tv+',
+    description: `Projet réalisé au sein de Bouygues Telecom visant à développer des espaces à contenus dédiés intégrés à l'application B.tv+.
+J'ai participé à l'implémentation des interfaces front-end en React et Tailwind CSS, à la connexion des API back-end et à la mise en place d'une modélisation de données permettant une architecture évolutive.
+Le projet incluait l'écriture de tests unitaires, l'amélioration de la qualité du code (SonarQube) ainsi que la présentation du travail lors des InnoDays 2025.`,
+    image: '/projects/ppro1.png',
+    technologies: [
+      { name: 'React', icon: SiReact },
+      { name: 'Tailwind CSS', icon: SiTailwindcss },
+      { name: 'Jest', icon: SiJest },
+      { name: 'Ract Testing Library', icon: SiTestinglibrary },
+      { name: 'API Rest', icon: TbApi },
+
+    ],
+    type: 'professional',
+  },
+  {
+    id: 'pprzs',
+    title: 'Plateforme de digitalisation des analyses biomédicales',
+    description: `Projet professionnel visant la digitalisation complète du processus de gestion et de consultation des analyses biomédicales à travers plusieurs applications web et mobiles.
+Le projet comprenait une application web pour les techniciens, des applications mobiles pour les patients et la création de comptes, ainsi qu'une application de support (help desk).
+J'ai contribué au développement des interfaces web et mobiles, à l'intégration des API et à des travaux côté back-end, participant à un projet full-stack à fort impact métier.`,
+    image: '/projects/ppro2.png',
+    technologies: [
+      { name: 'React', icon: SiReact },
+      { name: 'React Native', icon: SiTailwindcss },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'Node js', icon: FaNodeJs },
+      { name: 'MongoDB', icon: SiMongodb },
+      { name: 'API Rest', icon: TbApi },
+    ],
+    type: 'professional',
+  },
+  {
+    id: 'pprpt',
+    title: 'Plateforme métier - Administration publique',
+    description: `Projet professionnel portant sur le développement d'une plateforme interne destinée aux agents des administrations publiques pour le traitement des demandes du service public.
+J'ai travaillé sur l'implémentation des interfaces front-end en React et CSS, en tenant compte des contraintes d'ergonomie et d'usage liées à un outil métier utilisé quotidiennement.
+Cette expérience m'a permis de renforcer mes compétences en intégration d'interfaces et en structuration de composants dans un environnement professionnel.`,
+    image: '/projects/ppro3.png',
+    technologies: [
+      { name: 'React', icon: SiReact },
+      { name: 'Tailwind CSS', icon: SiTailwindcss },
+    ],
+    type: 'professional',
+  },
+
+  {
+    id: 'ppeqg',
     title: 'Quote Generator',
     description: `Application de génération de citations développée en React.
 Elle permet d'afficher des citations aléatoires via une API externe, de les ajouter en favoris et de les partager.
@@ -38,14 +89,15 @@ Le projet met l'accent sur une interface responsive, une expérience utilisateur
       { name: 'Tailwind CSS', icon: SiTailwindcss },
     ],
     link: 'https://quote-generator-react-omega.vercel.app/',
-    github: 'https://github.com/Sabineeklo/quote-generator-react'
+    github: 'https://github.com/Sabineeklo/quote-generator-react',
+    type: 'personal',
   },
   {
-    id: 'p2pw',
+    id: 'ppepw',
     title: 'Portfolio',
     description: `Portfolio personnel développé en React afin de présenter mes projets, mon parcours et mes compétences.
-Le site a été conçu comme une application front-end à part entière, avec une attention particulière portée à la clarté de l’information, à la performance et à l’expérience utilisateur.
-Il évoluera progressivement avec l’ajout de nouveaux projets et de fonctionnalités.`,
+Le site a été conçu comme une application front-end à part entière, avec une attention particulière portée à la clarté de l'information, à la performance et à l'expérience utilisateur.
+Il évoluera progressivement avec l'ajout de nouveaux projets et de fonctionnalités.`,
     image: '/projects/portfolio.png',
     technologies: [
       { name: 'React', icon: SiReact },
@@ -53,6 +105,9 @@ Il évoluera progressivement avec l’ajout de nouveaux projets et de fonctionna
       { name: 'Tailwind CSS', icon: SiTailwindcss },
     ],
     github: 'https://github.com/Sabineeklo/Monportofolio',
+    type: 'personal',
+    isCurrent: true,
+
   },
 ];
 

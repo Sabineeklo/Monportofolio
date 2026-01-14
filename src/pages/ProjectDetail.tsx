@@ -19,9 +19,7 @@ const ProjectDetail = () => {
   const project = projects[currentIndex];
 
   if (!project) {
-    return (
-      <NotFound />
-    );
+    return <NotFound />;
   }
 
   const prevProject = projects[currentIndex - 1];
@@ -31,7 +29,7 @@ const ProjectDetail = () => {
 
   return (
     <main>
-      {/* ================= HERO IMAGE ================= */}
+      {/*  HERO IMAGE  */}
       <section className='relative'>
         <img
           src={project.image}
@@ -39,7 +37,7 @@ const ProjectDetail = () => {
           className='w-full max-h-[350px] object-cover'
         />
 
-        {/* ===== Banner ===== */}
+        {/*  Banner */}
         <div
           className='
             absolute
@@ -101,7 +99,7 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      {/* ================= CONTENT ================= */}
+      {/* CONTENT  */}
       <section className='max-w-4xl mx-auto px-6 pt-24 space-y-12'>
         {/* Description */}
         <div>
@@ -146,6 +144,13 @@ const ProjectDetail = () => {
               ))}
             </ul>
           </div>
+        )}
+        {project.type === 'professional' && (
+          <p className='text-red-900 text-lg md:text-xl leading-relaxed'>
+            🔒 Projet professionnel réalisé dans un contexte entreprise. Le code
+            source et la démonstration ne sont pas accessibles pour des raisons
+            de confidentialité.
+          </p>
         )}
 
         {/* Links */}
@@ -206,7 +211,7 @@ const ProjectDetail = () => {
         )}
       </section>
 
-      {/* ================= OTHER PROJECTS ================= */}
+      {/*  OTHER PROJECTS  */}
       <section className='max-w-6xl mx-auto px-7 md:py-32 py-20'>
         <h2 className='text-xl md:text-3xl text-primary-900 font-semibold mb-12'>
           Autres projets
@@ -217,7 +222,6 @@ const ProjectDetail = () => {
             <ProjectCard
               key={project.id}
               project={project}
-              isCurrent={project.id === 'p2pw'}
               className='!w-full pb-12'
             />
           ))}

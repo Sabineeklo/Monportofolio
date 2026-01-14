@@ -5,14 +5,25 @@ import type { Project } from '../types';
 
 interface ProjectCardProps {
   project: Project;
-  isCurrent?: boolean;
   className?: string;
 }
 
+const badgeConfig = {
+  professional: {
+    label: 'Projet professionnel',
+    className: 'bg-primary-100 text-primary-700',
+  },
+  personal: {
+    label: 'Projet personnel',
+    className: 'bg-secondary-100 text-secondary-700',
+  },
+};
+
 const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
-  ({ project, isCurrent = false, className = '' }, ref) => {
-    const { id, title, description, image } = project;
+  ({ project, className = '' }, ref) => {
+    const { id, title, description, image, type, isCurrent } = project;
     const displayedTechs = project.technologies.slice(0, 3);
+    const badge = badgeConfig[type];
 
     return (
       <div
@@ -21,54 +32,74 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
       >
         <Link
           to={`/projects/${id}`}
-          className='relative group block cursor-pointer focus:outline-none'
+          className="relative group block cursor-pointer focus:outline-none"
         >
-          {/* Image avec bordure */}
-          <div className='border-[16px] border-secondary-50 relative overflow-hidden'>
+          {/* Image */}
+          <div className="border-[16px] border-secondary-50 relative overflow-hidden">
             <img
               src={image}
               alt={title}
-              className='lg:h-[550px] h-[340px] w-full object-cover'
+              className="lg:h-[550px] h-[340px] w-full object-cover"
             />
 
-            {/* Overlay blanc semi-transparent */}
-            <div className='absolute inset-0 bg-white/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
-            {/*  BADGE  */}
-            {isCurrent && (
-              <div
-                className='
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-white/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+            {/* Badge type */}
+            <div
+              className={`
                 absolute
-                top-0
-                left-0
+                top-3
+                left-3
                 z-20
-                flex
-                items-center
-                gap-2
-                bg-white/80
-                text-primary-700
-                px-4
-                py-2
-                shadow-md
+                px-3
+                py-1
                 text-xs
                 font-semibold
-              '
+                rounded-full
+                shadow
+                ${badge.className}
+              `}
+            >
+              {badge.label}
+            </div>
+
+            {/* Badge "Vous êtes ici" */}
+            {isCurrent && (
+              <div
+                className="
+                  absolute
+                  top-3
+                  right-3
+                  z-20
+                  flex
+                  items-center
+                  gap-2
+                  bg-white/90
+                  text-primary-700
+                  px-2
+                  py-1
+                  text-xs
+                  font-semibold
+                  rounded-full
+                  shadow
+                "
               >
-                <span className='relative flex size-3'>
-                  <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary-400 opacity-75'></span>
-                  <span className='relative inline-flex size-3 rounded-full bg-secondary-500'></span>
+                <span className="relative flex size-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary-400 opacity-75" />
+                  <span className="relative inline-flex size-2 rounded-full bg-secondary-500" />
                 </span>
                 Vous êtes ici
               </div>
             )}
           </div>
 
-          {/* Card superposée */}
+          {/* Card contenu */}
           <div
-            className='
+            className="
               absolute
               lg:-bottom-8 
               -bottom-12
-              lg:mt-2
               left-6
               w-full
               bg-primary-500
@@ -80,43 +111,23 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
               duration-300
               group-hover:-translate-y-1
               z-10
-            '
+            "
           >
-            <h3 className='text-xl font-semibold mb-3'>{title}</h3>
+            <h3 className="text-xl font-semibold mb-3">{title}</h3>
 
-            {/* Description coupée à 3 lignes */}
-            <p className='text-lg text-primary-100 leading-relaxed mb-6 line-clamp-4'>
+            <p className="text-lg text-primary-100 leading-relaxed mb-6 line-clamp-4">
               {description}
             </p>
-            {/* Technologies */}
-            <div className='flex gap-3 text-white/80 mb-4'>
+
+            <div className="flex gap-3 text-white/80 mb-4">
               {displayedTechs.map((tech) => (
-                <span
-                  key={tech.name}
-                  className='flex items-center gap-3 text-sm'
-                  title={tech.name}
-                >
+                <span key={tech.name} title={tech.name}>
                   {tech.icon && <tech.icon />}
                 </span>
               ))}
             </div>
 
-            {/* bouton */}
-            <span
-              className='
-                inline-flex
-                items-center
-                justify-center
-                gap-2
-                border-2
-                border-white
-                px-4
-                py-3
-                text-lg
-                transition-all
-                duration-300
-              '
-            >
+            <span className="inline-flex items-center gap-2 border-2 border-white px-4 py-3 text-lg">
               En savoir plus <ArrowRight size={24} />
             </span>
           </div>
