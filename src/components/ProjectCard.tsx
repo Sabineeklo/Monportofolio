@@ -28,7 +28,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
     return (
       <div
         ref={ref}
-        className={`project-card flex-shrink-0 lg:w-[500px] w-[300px] ${className}`}
+        className={`project-card flex-shrink-0 lg:w-[500px] w-[315px] ${className}`}
       >
         <Link
           to={`/projects/${id}`}
@@ -50,7 +50,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
               className={`
                 absolute
                 top-3
-                left-3
+                left-2
                 z-20
                 px-3
                 py-1
@@ -70,7 +70,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
                 className="
                   absolute
                   top-3
-                  right-3
+                  right-2
                   z-20
                   flex
                   items-center
@@ -115,7 +115,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
           >
             <h3 className="text-xl font-semibold mb-3">{title}</h3>
 
-            <p className="text-lg text-primary-100 leading-relaxed mb-6 line-clamp-4">
+            <p className="text-lg text-primary-100 leading-relaxed mb-6 line-clamp-3">
               {description}
             </p>
 

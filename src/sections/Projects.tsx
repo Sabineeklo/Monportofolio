@@ -59,7 +59,7 @@ const Projects = () => {
       </div>
 
       {/* Contenu */}
-      <div className='relative z-10 mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center'>
+      <div className='relative z-10 mx-auto px-0 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center'>
         {/* Texte à gauche*/}
         <div className='lg:col-span-1 lg:px-16 px-4 flex flex-col justify-center h-full'>
           <h1 className='lg:text-4xl text-3xl font-semibold text-primary-600 mb-6'>

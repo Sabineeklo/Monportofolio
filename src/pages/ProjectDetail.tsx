@@ -29,12 +29,12 @@ const ProjectDetail = () => {
 
   return (
     <main>
-      {/*  HERO IMAGE  */}
+      {/*  Project IMAGE  */}
       <section className='relative'>
         <img
           src={project.image}
           alt={project.title}
-          className='w-full max-h-[350px] object-cover'
+          className='w-full md:h-[400px] h-[320px] object-cover'
         />
 
         {/*  Banner */}
@@ -58,7 +58,7 @@ const ProjectDetail = () => {
             shadow-xl
           '
         >
-          <h1 className='text-xl md:text-3xl font-semibold text-secondary-300'>
+          <h1 className='text-xl md:text-3xl text-center font-semibold text-secondary-300'>
             {project.title}
           </h1>
 
